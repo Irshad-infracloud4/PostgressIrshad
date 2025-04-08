@@ -34,7 +34,7 @@ spec:
             replicas: 1
   destination:
     server: https://kubernetes.default.svc
-    namespace: monitor
+    namespace: monitoring
   syncPolicy:
     automated:
       prune: true
