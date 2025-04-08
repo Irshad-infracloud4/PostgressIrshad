@@ -1,19 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: monitor
+  name: monitoring
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/Irshad-infracloud4/PostgressIrshad.git
     targetRevision: HEAD
-    path: apps/monitor   
+    path: monitor
+    helm:
       valueFiles:
         - test.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: monitor
+    namespace: monitoring
   syncPolicy:
     automated:
       prune: true
