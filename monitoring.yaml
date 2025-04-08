@@ -15,7 +15,7 @@ spec:
           replicas: 2
           persistence:
             enabled: true
-            size: 1Gi
+            size: 300Mi
             storageClassName: standard
         prometheus:
           prometheusSpec:
@@ -27,7 +27,7 @@ spec:
                   accessModes: ["ReadWriteOnce"]
                   resources:
                     requests:
-                      storage: 2Gi
+                      storage: 500Mi
         alertmanager:
           enabled: true
           alertmanagerSpec:
