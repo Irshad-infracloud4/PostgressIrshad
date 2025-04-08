@@ -15,8 +15,11 @@ spec:
           replicas: 2
           persistence:
             enabled: true
-            size: 300Mi
+            size: 500Mi
             storageClassName: standard
+            accessModes:
+              - ReadWriteOnce
+            type: pvc
         prometheus:
           prometheusSpec:
             replicas: 2
