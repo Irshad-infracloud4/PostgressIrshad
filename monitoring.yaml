@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: monitoring
+  name: monitor
   namespace: argocd
 spec:
   project: default
@@ -34,7 +34,7 @@ spec:
             replicas: 1
   destination:
     server: https://kubernetes.default.svc
-    namespace: monitoring
+    namespace: monitor
   syncPolicy:
     automated:
       prune: true
