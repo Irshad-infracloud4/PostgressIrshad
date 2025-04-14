@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: postgresql
+  namespace: monitoring
+  labels:
+    release: kube-prometheus-stack
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: metrics
+      app.kubernetes.io/instance: postgresql
+      app.kubernetes.io/name: postgresql
+  namespaceSelector:
+    matchNames:
+      - postgresql
+  endpoints:
+    - port: metrics
+      interval: 30s
