@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: irshad-app1
+  name: irshadapp
   namespace: argocd
 spec:
   project: default
@@ -9,13 +9,12 @@ spec:
     repoURL: https://github.com/Irshad-infracloud4/PostgressIrshad.git
     targetRevision: HEAD
     path: apps
-    directory:
-      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
   syncPolicy:
     automated:
       selfHeal: true
-      prune: true
-  
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
