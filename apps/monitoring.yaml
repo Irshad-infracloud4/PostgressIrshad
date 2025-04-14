@@ -49,6 +49,11 @@ spec:
             accessModes:
               - ReadWriteOnce
             size: 20Gi
+          sidecar:
+            dashboards:
+              enabled: true
+            datasources:
+              enabled: true
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring

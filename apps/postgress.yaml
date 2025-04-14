@@ -18,11 +18,6 @@ spec:
         primary:
           metrics:
             enabled: true
-            service:
-              ports:
-                - name: metrics
-                  port: 9187
-                  targetPort: metrics
             serviceMonitor:
               enabled: true
               namespace: monitoring
@@ -39,4 +34,4 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - ServerSideApply=true
-      - Replace=true  
+      - Replace=true
