@@ -14,15 +14,15 @@ spec:
           username: myuser
           password: mypassword
           database: mydb
-        primary:
-          metrics:
+        
+        metrics:
+          enabled: true
+          serviceMonitor:
             enabled: true
-            serviceMonitor:
-              enabled: true
-              namespace: monitoring
-              interval: 30s
-              additionalLabels:
-                release: kube-prometheus-stack
+            namespace: monitoring
+            interval: 30s
+            additionalLabels:
+              release: kube-prometheus-stack
   destination:
     server: https://kubernetes.default.svc
     namespace: postgresql
