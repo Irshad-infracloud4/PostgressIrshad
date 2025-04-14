@@ -12,9 +12,9 @@ spec:
     helm:
       values: |
         auth:
-          username: irshad
-          password: password
-          database: irshaddb
+          username: myuser
+          password: mypassword
+          database: mydb
         primary:
           persistence:
             enabled: true
