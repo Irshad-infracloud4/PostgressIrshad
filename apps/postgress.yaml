@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://charts.bitnami.com/bitnami
     chart: postgresql
-    targetRevision: 15.5.0 
+    targetRevision: 15.5.0
     helm:
       values: |
         auth:
@@ -23,10 +23,10 @@ spec:
             enabled: true
             serviceMonitor:
               enabled: true
+              namespace: monitoring
+              interval: 30s
               additionalLabels:
                 release: kube-prometheus-stack
-              namespace: monitoring
-              interval: 30s 
   destination:
     server: https://kubernetes.default.svc
     namespace: postgresql
