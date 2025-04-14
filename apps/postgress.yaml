@@ -16,11 +16,13 @@ spec:
           password: mypassword
           database: mydb
         primary:
-          persistence:
-            enabled: true
-            size: 5Gi
           metrics:
             enabled: true
+            service:
+              ports:
+                - name: metrics
+                  port: 9187
+                  targetPort: metrics
             serviceMonitor:
               enabled: true
               namespace: monitoring
