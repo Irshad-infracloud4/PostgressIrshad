@@ -9,19 +9,19 @@ spec:
     repoURL: https://charts.bitnami.com/bitnami
     chart: postgresql
     targetRevision: 16.4.9
-      values: |
-        auth:
-          username: myuser
-          password: mypassword
-          database: mydb
-        metrics:
+    values: |
+      auth:
+        username: myuser
+        password: mypassword
+        database: mydb
+      metrics:
+        enabled: true
+        serviceMonitor:
           enabled: true
-          serviceMonitor:
-            enabled: true
-            namespace: monitoring
-            interval: 30s
-            additionalLabels:
-              release: kube-prometheus-stack
+          namespace: monitoring
+          interval: 30s
+          additionalLabels:
+            release: kube-prometheus-stack
   destination:
     server: https://kubernetes.default.svc
     namespace: postgresql
