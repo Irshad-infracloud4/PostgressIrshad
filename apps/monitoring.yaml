@@ -14,6 +14,14 @@ spec:
         prometheus:
           prometheusSpec:
             replicas: 2
+            serviceMonitorSelectorNilUsesHelmValues: false
+            serviceMonitorNamespaceSelector:
+              matchExpressions:
+                - key: kubernetes.io/metadata.name
+                  operator: In
+                  values:
+                    - monitoring
+                    - postgresql
             storageSpec:
               volumeClaimTemplate:
                 spec:
