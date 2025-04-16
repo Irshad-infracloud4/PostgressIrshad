@@ -39,7 +39,7 @@ spec:
                     requests:
                       storage: 20Gi
         grafana:
-          replicas: 2
+          replicas: 1
           deploymentStrategy: Recreate
           statefulset:
             enabled: true
